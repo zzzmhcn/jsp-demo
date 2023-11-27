@@ -27,7 +27,21 @@
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+            <!-- 排除这段可能出错的依赖 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>jakarta.servlet.jsp.jstl</groupId>
+                    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- 手动补上这段依赖 并指定一个安全的版本号 -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>3.0.0</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
